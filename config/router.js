@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const movies = require('../controllers/movies');
+const tmdb = require('../controllers/tmdb');
 
-router.route('/movies/topMovies')
-  .get(movies.topMovies);
+router.route('/tmdb/topMovies')
+  .get(tmdb.topMovies);
 
 module.exports = router;
