@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter } from 'react-router-dom';
 
-import Home from './components/Home';
+
+import indexMovies from './components/indexMovies';
 import Show from './components/Show';
 
 import 'bulma';
@@ -15,7 +16,7 @@ class App extends React.Component {
         <main>
           <section className="section">
             <div className="container">
-              <Route exact path="/" component={Home}/>
+              <Route exact path="/" component={indexMovies}/>
               <Route path="/show" component={Show}/>
             </div>
           </section>
