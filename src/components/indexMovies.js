@@ -6,16 +6,17 @@ class indexMovies extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: {}
+      moviesList: []
     };
     console.log(this.state.body);
   }
 
   componentWillMount() {
-    axios.get('https://api.themoviedb.org/3/discover/movie?api_key=58ae7c2490643e98de044b22b8abac1b&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',{
+    axios.get('/api/movies',{
     })
       .then(res => {
         console.log(res.data);
+        this.setState({ moviesList: res.data.results});
       });
   }
 
@@ -24,7 +25,13 @@ class indexMovies extends React.Component {
     return (
       <main>
         <h1>Movies Index Page</h1>
-
+        {this.state.moviesList ? (
+          this.state.moviesList.map(movie =>
+            <h2 key={movie.id}>{movie.title}</h2>
+          )
+        ) : (
+          <h2>Loading... </h2>
+        )}
       </main>
     );
   }
