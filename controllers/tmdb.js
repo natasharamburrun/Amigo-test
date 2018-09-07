@@ -11,8 +11,6 @@ function indexMovies(req, res) {
 }
 
 function showMovies(req, res) {
-  
-  console.log(req.params.id);
   return rp({
     method: 'GET',
     url: 'https://api.themoviedb.org/3/movie/${req.params.id}',

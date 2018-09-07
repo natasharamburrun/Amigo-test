@@ -17,7 +17,7 @@ class App extends React.Component {
           <section className="section">
             <div className="container">
               <Route exact path="/" component={indexMovies}/>
-              <Route path="movies/:id" component={showMovies}/>
+              <Route path="/movies/:id" component={showMovies}/>
             </div>
           </section>
         </main>

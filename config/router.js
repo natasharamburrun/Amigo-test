@@ -6,13 +6,13 @@ const tmdb = require('../controllers/tmdb');
 router.route('/movies')
   .get(tmdb.indexMovies);
 
-
 // // This will make a request for the specific film we have supplied the id for
 router.route('/movies/:id')
   .get(tmdb.showMovies);
 
 
 module.exports = router;
+
 // const Movies = props => (
 //   <Grid>
 //     <Row>
