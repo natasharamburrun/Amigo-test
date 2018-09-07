@@ -13,7 +13,7 @@ function indexMovies(req, res) {
 function showMovies(req, res) {
   return rp({
     method: 'GET',
-    url: 'https://api.themoviedb.org/3/movie/${req.params.id}',
+    url: `https://api.themoviedb.org/3/movie/${req.params.id}`,
     qs: {
       api_key: '58ae7c2490643e98de044b22b8abac1b',
       language: 'en-US',

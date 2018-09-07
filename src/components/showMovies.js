@@ -20,7 +20,7 @@ class showMovies extends React.Component {
 
     axios.get(`/api/movies/${this.props.match.params.id}`)
       .then(res => {
-        console.log(res.data.results);
+        console.log(res.data);
         this.setState({ moviesList: res.data.results});
       });
   }
