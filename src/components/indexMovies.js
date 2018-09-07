@@ -15,7 +15,7 @@ class indexMovies extends React.Component {
     axios.get('/api/movies',{
     })
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         this.setState({ moviesList: res.data.results});
       });
   }

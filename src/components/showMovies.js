@@ -7,30 +7,40 @@ class showMovies extends React.Component {
     super();
     this.state = {
       data: {
-        content: '',
         favourites: []
-
       }
     };
     console.log(this.state.data);
   }
 
   componentWillMount() {
-    // In the ResultsDisplay component we link each content to /content/films/:id - this means we can get the id out of the url and request that specific content from the API
-
     axios.get(`/api/movies/${this.props.match.params.id}`)
       .then(res => {
         console.log(res.data);
-        this.setState({ moviesList: res.data.results});
+        this.setState({ data: res.data });
       });
   }
 
   render() {
+    const imgURL= 'https://image.tmdb.org/t/p/w500/';
     return (
+      <section className="section">
+        <div className="container-show">
+          <div className="Title">
+            <h1>Movies Show Page</h1>
+          </div>
+          <div className="columns is-multiline">
+            <div className="column is-half">
+              <figure className="image">
+                <img src= {`${imgURL}${this.state.data.poster_path}`} />
+              </figure>
+            </div>
+            <div className="column is-half">
 
-      <main>
-        <h1>Movies Show Page</h1>
-      </main>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 
