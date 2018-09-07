@@ -4,7 +4,7 @@ import { Route, BrowserRouter } from 'react-router-dom';
 
 
 import indexMovies from './components/indexMovies';
-import Show from './components/Show';
+import showMovies from './components/showMovies';
 
 import 'bulma';
 import './scss/style.scss';
@@ -17,7 +17,7 @@ class App extends React.Component {
           <section className="section">
             <div className="container">
               <Route exact path="/" component={indexMovies}/>
-              <Route path="/show" component={Show}/>
+              <Route path="movies/:id" component={showMovies}/>
             </div>
           </section>
         </main>

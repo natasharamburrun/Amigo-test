@@ -1,14 +1,18 @@
 const router = require('express').Router();
 const tmdb = require('../controllers/tmdb');
 
-// This will request the top films
+const movies = require('../controllers/movies');
+// This will request all top films
 router.route('/movies')
   .get(tmdb.indexMovies);
 
 
-// This will make a request for the specific film we have supplied the id for
+// // This will make a request for the specific film we have supplied the id for
 // router.route('/movies/:id')
 //   .get(tmdb.showMovies);
+
+router.route('/movies/:id')
+  .get(tmdb.showMovies);
 
 
 module.exports = router;

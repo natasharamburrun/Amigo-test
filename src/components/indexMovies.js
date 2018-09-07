@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class indexMovies extends React.Component {
 
@@ -14,13 +15,13 @@ class indexMovies extends React.Component {
     axios.get('/api/movies',{
     })
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setState({ moviesList: res.data.results});
       });
   }
 
   render() {
-    console.log(this.state.moviesList);
+    // console.log(this.state.moviesList);
     const imgURL= 'https://image.tmdb.org/t/p/w500/';
     return (
       <section className="section">
@@ -31,38 +32,21 @@ class indexMovies extends React.Component {
           <div className="columns is-multiline">
             {this.state.moviesList.map(movie =>
               <div key={movie.id} className="column is-one-quarter-desktop is-half-tablet">
-
-                <div className="card-movie">
-                  <div className="content">
-                    <h2 className="title">{movie.title}</h2>
+                <Link to={`/movies/${movie.id}`}>
+                  <div className="card-movie">
+                    <div className="content">
+                      <h2 className="title">{movie.title}</h2>
+                    </div>
+                    <figure className="image">
+                      <img src= {`${imgURL}${movie.poster_path}`} />
+                    </figure>
                   </div>
-                  <figure className="image">
-                    <img src= {`${imgURL}${movie.poster_path}`} />
-                  </figure>
-                </div>
-
+                </Link>
               </div>
             )}
           </div>
         </div>
       </section>
-
-      //
-      //       <main>
-      //         <div >
-      //           <h1>Movies Index Page</h1>
-      //           {this.state.moviesList ? (
-      //             this.state.moviesList.map(movie =>
-      //               <h2 key={movie.id}>{movie.title}</h2>
-      //             )
-      //           ) : (
-      //             <h2>Loading... </h2>
-      //           )}
-      //         </div>
-      //       </main>
-      //     );
-      //   }
-      //
     );
   }
 }
