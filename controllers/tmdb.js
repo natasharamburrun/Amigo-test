@@ -11,6 +11,7 @@ function indexMovies(req, res) {
 }
 
 function showMovies(req, res) {
+  
   console.log(req.params.id);
   return rp({
     method: 'GET',
