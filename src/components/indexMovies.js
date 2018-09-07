@@ -26,9 +26,6 @@ class indexMovies extends React.Component {
     return (
       <section className="section">
         <div className="container-index">
-          <div className="Title">
-            <h1>Movies Index Page</h1>
-          </div>
           <div className="columns is-multiline">
             {this.state.moviesList.map(movie =>
               <div key={movie.id} className="column is-one-quarter-desktop is-half-tablet">
