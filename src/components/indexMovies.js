@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class indexMovies extends React.Component {
+class IndexMovies extends React.Component {
 
   constructor() {
     super();
@@ -47,4 +47,4 @@ class indexMovies extends React.Component {
     );
   }
 }
-export default indexMovies;
+export default IndexMovies;
