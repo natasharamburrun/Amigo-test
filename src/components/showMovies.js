@@ -34,69 +34,19 @@ class ShowMovies extends React.Component {
             vote_average: res.data.vote_average
           }
         }));
-    // .then(() => {
-    //   if(localStorage.getItem('favourites')) {
-    //     this.setState({ favourite: this.checkIfFavourite() });
-    //   }
-    // });
   }
-
-  //   checkIfFavourite = () => {
-  //     const favourites = JSON.parse(localStorage.getItem('favourites'));
-  //     const movieIds = favourites.map(data => data.id);
-  //     return movieIds.includes(this.state.data.id);
-  //   }
-  //
-  // handleFavourite = () => {
-  //   if(!this.state.favourite) {
-  //     this.setState({ favourite: true });
-  //     document.getElementById('star').classList.toggle('fas');
-  //     if(localStorage.getItem('favourites')) {
-  //       const storedArray = JSON.parse(localStorage.getItem('favourites'));
-  //       const newPhotoArray = storedArray.concat(this.toArray(this.state.movie));
-  //       localStorage.setItem('favourites', JSON.stringify(newPhotoArray));
-  //     } else localStorage.setItem('favourites', JSON.stringify(this.toArray(this.state.movie)));
-  //   }
-  // }
-
-
-  // // check for exsiting favs:
-  // checkFavourited = () => {
-  //   // get current favorites from local storage
-  //   const favourites = JSON.parse(localStorage.getItem('favourites'));
-  //   // map over movie to check for favorites
-  //   const movieId = favourites.map(movie => movie);
-  //   return movieId.includes(this.state.movie);
-  // }
-
-  //function that checks if current NEO is already favorited and if so sets favorite to true
-  // checkIfFavorited = (name) => {
-  //   if (Object.keys(localStorage).indexOf(name) > -1) {
-  //     this.setState({favorite: true});
-  //   }
-  // }
-  // getFavourites = () => {
-  //   if(!localStorage.getItem('getfavourites')){
-  //     return [];
-  //   } else {
-  //     return JSON.parse(localStorage.getItem('getfavourites'));
-  //   }
-  // }
-
 
     favouriteRoute = () => {
       if(!this.state.favourite) {
         this.setState({ favourite: true });
 
-        //fetch current array of favorite items in localStorage
         if(localStorage.getItem('favourites')) {
           const currentArray = JSON.parse(localStorage.getItem('favourites'));
-          //joining th fav new item to the exsiting array of favourites
+          //joining the fav new item to the exsiting array of favourites
           const newArray = currentArray.concat(this.toArray(this.state.data));
           //include items in localStorage into a newArray
           localStorage.setItem('favourites', JSON.stringify(newArray));
         } else
-        //remain in currentarray
           localStorage.setItem('favourites', JSON.stringify(this.toArray(this.state.data)));
       }
     }
