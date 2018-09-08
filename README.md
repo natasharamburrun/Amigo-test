@@ -6,7 +6,7 @@
 - Add a favourite icon which adds the item to a list in your 'account' (no account created required)
 
 <hr>
-##### Technologies Used
+#### Technologies Used:
 HTML | SCSS | JavaScript (ES6) | React | Webpack | Bulma | Sass
 <hr>
 
@@ -23,3 +23,14 @@ My ability to complete this task without the support of the academy teachers I f
 #### Challenges:
 
 Found using localStorage challenging at first but managed to work my way through this by using pseudocode to understand the steps reach a solution.
+
+#### Print Screens:
+
+<strong>Index Page</strong>:
+<p align="center"><img src="src/img/index_page.png" "width=700"></p>
+
+<strong>Show Page</strong>:
+<p align="center"><img src="src/img/show_page.png" "width=700"></p>
+
+<strong>Favourite Page</strong>:
+<p align="center"><img src="src/img/fav_page.png" "width=700"></p>

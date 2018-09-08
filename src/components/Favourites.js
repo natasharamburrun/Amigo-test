@@ -21,7 +21,6 @@ class Favourites extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <section className="favourites">
         <h2 className="title is-4 fav-title">Favourite Movies</h2>
