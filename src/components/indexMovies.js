@@ -21,7 +21,6 @@ class IndexMovies extends React.Component {
   }
 
   render() {
-    // console.log(this.state.moviesList);
     const imgURL= 'https://image.tmdb.org/t/p/w500/';
     return (
       <section className="section">
