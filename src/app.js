@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
-
+import Footer from './components/common/Footer';
 import IndexMovies from './components/IndexMovies';
 import ShowMovies from './components/ShowMovies';
 import Favourites from './components/Favourites';
@@ -24,6 +24,7 @@ class App extends React.Component {
                 <Route path="/favourites" component={Favourites}/>
               </Switch>
             </div>
+            <Footer />
           </section>
         </main>
       </BrowserRouter>
