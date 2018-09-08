@@ -1,13 +1,20 @@
 .image-fav {
-  max-width: 225px;
-  max-height: 425px;
+  border: none;
+  display: inline-block;
+  object-fit: cover;
+  padding: 20px 20px 10px 20px;
 }
 
 .favourites {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 
 .fav-title {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+.content-title {
+  padding: 10px;
 }

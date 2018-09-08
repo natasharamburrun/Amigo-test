@@ -26,11 +26,13 @@ class Favourites extends React.Component {
         <h2 className="title is-4 fav-title">Favourite Movies</h2>
         <div className="columns is-multiline">
           {this.state.movies && this.state.movies.map(movie =>
-            <div key={movie.id} className="column is-one-quarter-desktop is-half-tablet is-mobile">
+            <div key={movie.id} className="column is-one-quarter-desktop is-one-third-tablet is-mobile">
               <figure className="image-fav">
                 <img src={movie.image} />
               </figure>
-              <h2 className="title is-6 movie">{movie.title}</h2>
+              <div className="content-title">
+                <h2 className="title is-6 movie-title">{movie.title}</h2>
+              </div>
             </div>
           )}
         </div>

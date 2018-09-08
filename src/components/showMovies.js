@@ -16,7 +16,6 @@ class ShowMovies extends React.Component {
         tagline: ''
       }
     };
-    // console.log(this.state.data);
   }
 
 
