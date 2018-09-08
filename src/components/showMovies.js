@@ -45,17 +45,15 @@ class ShowMovies extends React.Component {
       });
   }
 
-  //*********************************************
-  // check for exsiting favs:
-  // get current favorites from local storage
-  // map over movie id to check for favorites
-  // bring back all has been starred as favourite
-  //*********************************************
 
+  // check for exsiting favs:
   checkIfFavourited = () => {
     console.log(this.state.data.id);
+    // get current favorites from local storage
     const favourites = JSON.parse(localStorage.getItem('favourites'));
+    // map over movie id to check for favorites
     const movie = favourites.map(data => data.id);
+    // bring back all has been starred as favourite
     return movie.includes(this.state.data.id);
   }
 
@@ -80,7 +78,6 @@ class ShowMovies extends React.Component {
     toArray = () => [];
 
 
-
     render() {
       const imgURL= 'https://image.tmdb.org/t/p/w500/';
       return (
@@ -101,7 +98,7 @@ class ShowMovies extends React.Component {
                 <h2 className="title is-5 movie">{this.state.data.overview}</h2>
 
                 <h2 onClick={this.addFavourite}><i id="star"
-                  className={`${!this.state.favourite ? 'far' : 'fas'} fa-star`}></i></h2>
+                  className={`${!this.state.favourite ? 'far' : 'fas'} fa-heart`}></i></h2>
               </div>
             </div>
           </div>
