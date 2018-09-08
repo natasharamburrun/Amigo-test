@@ -1,4 +1,11 @@
 * {
   font-family: 'Montserrat', sans-serif;
-
 }
+
+@import '~bulma';
+
+@import 'components/common';
+@import 'components/favourites';
+@import 'components/indexmovies';
+@import 'components/showmovies';
+@import 'components/footer';

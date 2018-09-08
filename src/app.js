@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter } from 'react-router-dom';
-
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import Navbar from './components/common/Navbar';
 
 import IndexMovies from './components/IndexMovies';
 import ShowMovies from './components/ShowMovies';
@@ -15,11 +15,14 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
+          <Navbar />
           <section className="section">
             <div className="container">
-              <Route exact path="/" component={IndexMovies}/>
-              <Route path="/movies/:id" component={ShowMovies}/>
-              <Route path="/favourites" component={Favourites}/>
+              <Switch>
+                <Route exact path="/" component={IndexMovies}/>
+                <Route path="/movies/:id" component={ShowMovies}/>
+                <Route path="/favourites" component={Favourites}/>
+              </Switch>
             </div>
           </section>
         </main>

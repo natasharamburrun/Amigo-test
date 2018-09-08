@@ -20,8 +20,8 @@ class ShowMovies extends React.Component {
   }
 
 
-  componentDidMount() {
-    axios.get(`/api/movies/${this.props.match.params.id}`)
+  componentDidMount(req) {
+    axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}`)
       .then(res =>
         this.setState({
           data: {

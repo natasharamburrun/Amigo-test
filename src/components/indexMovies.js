@@ -12,7 +12,7 @@ class IndexMovies extends React.Component {
   }
 
   componentWillMount() {
-    axios.get('/api/movies',{
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=58ae7c2490643e98de044b22b8abac1b&language=en-US&page=1',{
     })
       .then(res => {
         console.log(res.data);

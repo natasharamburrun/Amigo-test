@@ -20,7 +20,7 @@ class Favourites extends React.Component {
     localStorage.removeItem('favourites');
     location.reload();
   }
-  
+
   render(){
     console.log(this.state);
     return(
