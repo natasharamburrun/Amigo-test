@@ -11,35 +11,32 @@
   min-height: 450px;
   padding: 80px;
   text-align: justify;
+  i {
+    font-size: 25px;
+    color: red;
+  }
 }
 
+.container-show {
+  padding-top: 80px;
+}
 
 @media only screen and (min-width: 1024px) {
     .container-show {
       display: flex;
-      // border: 5px solid red;
-
     }
 }
 
 @media only screen and (min-width: 1024px) {
     .image-show {
-      // border: 5px solid green;
       margin-left: 10%;
       padding-right: 30px;
-
     }
 }
 
 @media only screen and (min-width: 1024px) {
     .content-details {
-      // border: 5px solid green;
       text-align: left;
       padding: 50px;
-
     }
-}
-
-.container-show {
-  padding-top: 80px;
 }

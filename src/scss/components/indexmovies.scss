@@ -8,6 +8,8 @@
 }
 .movie-title {
   padding: 10px;
+  float: left;
+  min-width: 200px;
 }
 
 .card-movie {
@@ -17,6 +19,7 @@
 
 .content-title {
   padding-top: 10px;
+  display: inline-flex;
 }
 
 @media screen and (max-width: 768px) {
@@ -24,4 +27,17 @@
     margin: 50px;
     display: inline-flex;
   }
+}
+
+.movie-vote-average {
+  float: left;
+  min-width: 25px;
+  padding: 5px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+
+.container-icons {
+  display: inline-flex;
 }

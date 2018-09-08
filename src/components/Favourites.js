@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Favourites extends React.Component {
 
@@ -14,7 +15,7 @@ class Favourites extends React.Component {
     this.setState({ movies: favourites });
   }
 
-  unFavourite = () => {
+  unfavouriteRoute = () => {
     localStorage.removeItem('favourites');
     location.reload();
   }
@@ -26,18 +27,20 @@ class Favourites extends React.Component {
         <h2 className="title is-4 fav-title">Favourite Movies</h2>
         <div className="columns is-multiline">
           {this.state.movies && this.state.movies.map(movie =>
-            <div key={movie.id} className="column is-one-quarter-desktop is-one-third-tablet is-mobile">
-              <figure className="image-fav">
-                <img src={movie.image} />
-              </figure>
-              <div className="content-title">
-                <h2 className="title is-6 movie-title">{movie.title}</h2>
-              </div>
+            <div key={movie.filmId} className="column is-one-quarter-desktop is-one-third-tablet is-mobile">
+              <Link to={`/movies/${movie.filmId}`}>
+                <figure className="image-fav">
+                  <img src={movie.image} />
+                </figure>
+                <div className="content-favtitle">
+                  <h2 className="title is-6 movie-title">{movie.title}</h2>
+                </div>
+              </Link>
             </div>
           )}
         </div>
         {!this.state.movies && <h1 className="title is-4 is-centered">No Favourites</h1>}
-        {this.state.movies && <button onClick={this.unFavourite} className="button">Clear All</button>}
+        {this.state.movies && <button onClick={this.unfavouriteRoute} className="button">Clear All</button>}
       </section>
     );
   }

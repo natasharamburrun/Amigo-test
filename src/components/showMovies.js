@@ -7,13 +7,14 @@ class ShowMovies extends React.Component {
     super();
     this.state = {
       favourites: false,
-      movies: [],
       data: {
         image: '',
         title: '',
         release_date: '',
         overview: '',
-        tagline: ''
+        tagline: '',
+        filmId: '',
+        vote_average: ''
       }
     };
   }
@@ -29,27 +30,61 @@ class ShowMovies extends React.Component {
             tagline: res.data.tagline,
             release_date: res.data.release_date,
             overview: res.data.overview,
-            filmId: res.data.id
+            filmId: res.data.id,
+            vote_average: res.data.vote_average
           }
-        }))
-      // .then(res => this.setState({ data: res.data }))
-      .then(() => {
-        if(localStorage.getItem('favourites')) {
-          this.setState({ favourite: this.checkFavourited() });
-        }
-      });
+        }));
+    // .then(() => {
+    //   if(localStorage.getItem('favourites')) {
+    //     this.setState({ favourite: this.checkIfFavourite() });
+    //   }
+    // });
   }
 
-  // check for exsiting favs:
-  checkFavourited = () => {
-    // get current favorites from local storage
-    const favourites = JSON.parse(localStorage.getItem('favourites'));
-    // map over movie to check for favorites
-    const movie = favourites.map(data => data);
-    return movie.includes(this.state.data);
-  }
+  //   checkIfFavourite = () => {
+  //     const favourites = JSON.parse(localStorage.getItem('favourites'));
+  //     const movieIds = favourites.map(data => data.id);
+  //     return movieIds.includes(this.state.data.id);
+  //   }
+  //
+  // handleFavourite = () => {
+  //   if(!this.state.favourite) {
+  //     this.setState({ favourite: true });
+  //     document.getElementById('star').classList.toggle('fas');
+  //     if(localStorage.getItem('favourites')) {
+  //       const storedArray = JSON.parse(localStorage.getItem('favourites'));
+  //       const newPhotoArray = storedArray.concat(this.toArray(this.state.movie));
+  //       localStorage.setItem('favourites', JSON.stringify(newPhotoArray));
+  //     } else localStorage.setItem('favourites', JSON.stringify(this.toArray(this.state.movie)));
+  //   }
+  // }
 
-    addFavourite = () => {
+
+  // // check for exsiting favs:
+  // checkFavourited = () => {
+  //   // get current favorites from local storage
+  //   const favourites = JSON.parse(localStorage.getItem('favourites'));
+  //   // map over movie to check for favorites
+  //   const movieId = favourites.map(movie => movie);
+  //   return movieId.includes(this.state.movie);
+  // }
+
+  //function that checks if current NEO is already favorited and if so sets favorite to true
+  // checkIfFavorited = (name) => {
+  //   if (Object.keys(localStorage).indexOf(name) > -1) {
+  //     this.setState({favorite: true});
+  //   }
+  // }
+  // getFavourites = () => {
+  //   if(!localStorage.getItem('getfavourites')){
+  //     return [];
+  //   } else {
+  //     return JSON.parse(localStorage.getItem('getfavourites'));
+  //   }
+  // }
+
+
+    favouriteRoute = () => {
       if(!this.state.favourite) {
         this.setState({ favourite: true });
 
@@ -67,31 +102,26 @@ class ShowMovies extends React.Component {
     }
     //make this.toArray from array to object
     toArray = (object) => [object];
-
+    //
 
     render() {
       return (
         <section className="section">
           <div className="container-show">
-            {/* <div className="columns">
-
-              <div className="column"> */}
             <figure className="image-show">
               <img src={this.state.data.image} />
             </figure>
-            {/* <div className="column"> */}
             <div className="content-details">
               <h2 className="title is-2 movie">{this.state.data.title}</h2>
               <h2 className="title is-3 movie">{this.state.data.tagline}</h2>
               <h2 className="title is-6 movie">Release Date: {this.state.data.release_date}</h2>
-              <h2 className="title is-5 overviewtitle">Overview:</h2>
+              <h2 className="title is-5 overviewtitle"><strong>Overview:</strong></h2>
               <h2 className="title is-5 movie">{this.state.data.overview}</h2>
-
-              <h2 onClick={this.addFavourite}><i
-                className={`${!this.state.favourite ? 'far' : 'fas'} fa-heart`}></i></h2>
-              {/* </div> */}
-              {/* </div>
-            </div> */}
+              <div className="container-icons">
+                <h2  className="fav-icon" onClick={this.favouriteRoute}><i
+                  className={`${!this.state.favourite ? 'far' : 'fas'} fa-heart`}></i></h2>
+                <p className="title is-6 movie-vote-average">{this.state.data.vote_average}</p>
+              </div>
             </div>
           </div>
         </section>
