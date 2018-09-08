@@ -1,0 +1,41 @@
+.image-show {
+  margin-top: 50px;
+  object-fit: cover;
+  min-width: 300px;
+  min-height: 450px;
+  margin-left: 22%;
+}
+
+.content-details {
+  min-width: 300px;
+  min-height: 450px;
+  padding: 80px;
+  text-align: justify;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .container-show {
+      display: flex;
+      // border: 5px solid red;
+
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .image-show {
+      // border: 5px solid green;
+      margin-left: 10%;
+      padding-right: 30px;
+
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .content-details {
+      // border: 5px solid green;
+      text-align: left;
+      padding: 50px;
+
+    }
+}

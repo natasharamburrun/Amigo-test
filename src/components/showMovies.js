@@ -74,22 +74,25 @@ class ShowMovies extends React.Component {
       return (
         <section className="section">
           <div className="container-show">
-            <div className="columns is-multiline">
-              <div className="column is-half">
-                <figure className="image">
-                  <img src={this.state.data.image} />
-                </figure>
-              </div>
-              <div className="column is-half">
-                <h2 className="title is-2 movie">{this.state.data.title}</h2>
-                <h2 className="title is-3 movie">{this.state.data.tagline}</h2>
-                <h2 className="title is-6 movie">Release Date: {this.state.data.release_date}</h2>
-                <h2 className="title is-5 overviewtitle">Overview:</h2>
-                <h2 className="title is-5 movie">{this.state.data.overview}</h2>
+            {/* <div className="columns">
 
-                <h2 onClick={this.addFavourite}><i
-                  className={`${!this.state.favourite ? 'far' : 'fas'} fa-heart`}></i></h2>
-              </div>
+              <div className="column"> */}
+            <figure className="image-show">
+              <img src={this.state.data.image} />
+            </figure>
+            {/* <div className="column"> */}
+            <div className="content-details">
+              <h2 className="title is-2 movie">{this.state.data.title}</h2>
+              <h2 className="title is-3 movie">{this.state.data.tagline}</h2>
+              <h2 className="title is-6 movie">Release Date: {this.state.data.release_date}</h2>
+              <h2 className="title is-5 overviewtitle">Overview:</h2>
+              <h2 className="title is-5 movie">{this.state.data.overview}</h2>
+
+              <h2 onClick={this.addFavourite}><i
+                className={`${!this.state.favourite ? 'far' : 'fas'} fa-heart`}></i></h2>
+              {/* </div> */}
+              {/* </div>
+            </div> */}
             </div>
           </div>
         </section>

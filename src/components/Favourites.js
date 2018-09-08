@@ -23,19 +23,19 @@ class Favourites extends React.Component {
     console.log(this.state);
     return(
       <section className="favourites">
-        <h2 className="title is-2 movie">FAVOURITE MOVIES</h2>
+        <h2 className="title is-4 movie-title">Favourite Movies</h2>
         <div className="columns is-multiline">
           {this.state.movies && this.state.movies.map(movie =>
             <div key={movie.id} className="column is-one-third-desktop is-one-third-tablet is-mobile">
-              <h2 className="title is-2 movie">{movie.title}</h2>
-              <figure className="image">
+              <figure className="image-fav">
                 <img src={movie.image} />
               </figure>
+              <h2 className="title is-6 movie">{movie.title}</h2>
             </div>
           )}
-          {!this.state.movies && <h1 className="title is-4 is-centered">No Favourites</h1>}
-          {this.state.movies && <button onClick={this.unFavourite} className="button">Clear All</button>}
         </div>
+        {!this.state.movies && <h1 className="title is-4 is-centered">No Favourites</h1>}
+        {this.state.movies && <button onClick={this.unFavourite} className="button">Clear All</button>}
       </section>
     );
   }
