@@ -22,6 +22,7 @@ class Favourites extends React.Component {
 
   render(){
     const imgURL= 'https://image.tmdb.org/t/p/w500/';
+    console.log(this.state.data.id);
     console.log(this.state);
     return(
       <section className="favourites">

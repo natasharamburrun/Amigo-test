@@ -40,21 +40,17 @@ class ShowMovies extends React.Component {
       .then(res => this.setState({ data: res.data }))
       .then(() => {
         if(localStorage.getItem('favourites')) {
-          this.setState({ favourite: this.checkIfFavourited() });
+          this.setState({ favourite: this.checkFavourited() });
         }
       });
   }
 
-
   // check for exsiting favs:
-  checkIfFavourited = () => {
-    console.log(this.state.data.id);
+  checkFavourited = () => {
     // get current favorites from local storage
     const favourites = JSON.parse(localStorage.getItem('favourites'));
     // map over movie id to check for favorites
-    const movie = favourites.map(data => data.id);
-    // bring back all has been starred as favourite
-    return movie.includes(this.state.data.id);
+    const movie = favourites.map(data => data.id); return movie.includes(this.state.data.id);
   }
 
   //ensure that only can favourite one time when click on star
@@ -63,9 +59,9 @@ class ShowMovies extends React.Component {
         this.setState({ favourite: true });
 
         if(localStorage.getItem('favourites')) {
-          //find current array of favorite items
+          //find current array of favorite items in localStorage
           const currentArray = JSON.parse(localStorage.getItem('favourites'));
-          //joining added item to the exsiting array of favourites
+          //joining th fav new item to the exsiting array of favourites
           const newArray = currentArray.concat(this.toArray(this.state.data));
           //include items in localStorage
           localStorage.setItem('favourites', JSON.stringify(newArray));
@@ -75,7 +71,7 @@ class ShowMovies extends React.Component {
       }
     }
     //function to make this.toArray from array to object
-    toArray = () => [];
+    toArray = (object) => [object];
 
 
     render() {
