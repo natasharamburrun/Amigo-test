@@ -23,19 +23,32 @@ class IndexMovies extends React.Component {
   render() {
     const imgURL= 'https://image.tmdb.org/t/p/w500/';
     return (
-      <section className="section">
+      // <section className="hero is-primary is-medium">
+      //   <div className="hero-body">
+      //     <div className="container">
+      //       <h1 className="title">
+      //         Medium title
+      //       </h1>
+      //       <h2 className="subtitle">
+      //         Medium subtitle
+      //       </h2>
+      //     </div>
+      //   </div>
+      // </section>
+      <section className="section-index">
         <div className="container-index">
+          <h2 className="title is-4 movie-title">Popular Movies</h2>
           <div className="columns is-multiline">
             {this.state.moviesList.map(movie =>
-              <div key={movie.id} className="column is-one-quarter-desktop is-half-tablet">
+              <div key={movie.id} className="column is-one-quarter-desktop is-half-tablet is-mobile">
                 <Link to={`/movies/${movie.id}`}>
                   <div className="card-movie">
-                    <div className="content">
-                      <h2 className="title">{movie.title}</h2>
-                    </div>
                     <figure className="image">
                       <img src= {`${imgURL}${movie.poster_path}`} />
                     </figure>
+                    <div className="content-title">
+                      <h2 className="title is-6 movie-title">{movie.title}</h2>
+                    </div>
                   </div>
                 </Link>
               </div>

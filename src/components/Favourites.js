@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Favourites extends React.Component {
 
@@ -28,12 +27,10 @@ class Favourites extends React.Component {
         <div className="columns is-multiline">
           {this.state.movies && this.state.movies.map(movie =>
             <div key={movie.id} className="column is-one-third-desktop is-one-third-tablet is-mobile">
-              <Link to={`/movies/${movie.id}`} >
-                <h2 className="title is-2 movie">{movie.title}</h2>
-                <figure className="image">
-                  <img src={movie.image} />
-                </figure>
-              </Link>
+              <h2 className="title is-2 movie">{movie.title}</h2>
+              <figure className="image">
+                <img src={movie.image} />
+              </figure>
             </div>
           )}
           {!this.state.movies && <h1 className="title is-4 is-centered">No Favourites</h1>}

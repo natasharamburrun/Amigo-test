@@ -18,6 +18,9 @@ class Navbar extends React.Component {
 
         <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
           <div className="navbar-start">
+            <p className="title">Movies Database</p>
+          </div>
+          <div className="navbar-end">
             <Link to="/" className="navbar-item" onClick={this.toggleNavbar}>Movies</Link>
             <Link to="/favourites" className="navbar-item" onClick={this.toggleNavbar}>Favourites</Link>
           </div>
@@ -38,5 +41,6 @@ class Navbar extends React.Component {
     );
   }
 }
+
 
 export default (Navbar);

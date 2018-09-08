@@ -1,0 +1,26 @@
+.navbar-menu {
+  background-color: #e52d20;
+  font-size: 20px;
+  font-weight: bolder;
+  p {
+    background-color: #e52d20;
+    padding-top: 7px;
+    padding-left: 20px;
+    .i {
+      margin: 5px;
+    }
+  }
+}
+
+.navbar-item {
+  color: white;
+  background-color: #e52d20;
+}
+
+.navbar-burger {
+  background-color: #e52d20;
+}
+
+.navbar.is-fixed-top {
+  background-color: #e52d20;
+}
