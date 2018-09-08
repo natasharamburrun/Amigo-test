@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class Navbar extends React.Component {
@@ -14,13 +14,15 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+
         <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
           <div className="navbar-start">
             <Link to="/" className="navbar-item" onClick={this.toggleNavbar}>Movies</Link>
             <Link to="/favourites" className="navbar-item" onClick={this.toggleNavbar}>Favourites</Link>
           </div>
         </div>
+
         <a role="button"
           className={`navbar-burger${this.state.navbarOpen ? ' is-active' : ''}`}
           aria-label="menu"
@@ -37,4 +39,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default withRouter(Navbar);
+export default (Navbar);

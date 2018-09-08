@@ -7,7 +7,6 @@ class Favourites extends React.Component {
     super();
     this.state = {
       movies: []
-      // data: {}
     };
   }
 
