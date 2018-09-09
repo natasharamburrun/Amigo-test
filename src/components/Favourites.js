@@ -10,7 +10,11 @@ class Favourites extends React.Component {
     };
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
+    this.getFavouritemovies();
+  }
+
+  getFavouritemovies = () => {
     const favourites = JSON.parse(localStorage.getItem('favourites'));
     this.setState({ movies: favourites });
   }
@@ -21,6 +25,8 @@ class Favourites extends React.Component {
   }
 
   render(){
+
+    console.log(this.state);
     return(
       <section className="favourites">
         <h2 className="title is-4 fav-title">Favourite Movies</h2>
