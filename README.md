@@ -6,9 +6,11 @@
 - Add a favourite icon which adds the item to a list in your 'account' (no account created required)
 
 <hr>
+
 #### Technologies Used:
 HTML | SCSS | JavaScript (ES6) | React | Webpack | Bulma | Sass
-<hr>
+
+hr>
 
 #### Build:
 
